@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block body %}
+    <ul>
+        <li>{{ article.id }}</li>
+        <li>{{ article.title }}</li>
+        <li>{{ article.content }}</li>
+        <li>{{ article.date|date("d/m/Y")}}</li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Show article
+{% endblock %}
+
+{% block body %}
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.id }}</li>
+            <li>{{ article.title }}</li>
+            <li>{{ article.content }}</li>
+            <li>{{ article.date|date("d/m/Y") }}</li>
+            <li>{{ article.author.firstname }} {{ article.author.lastname }}</li>
+            <li><a href="{{ path('blog_update_article', {'id': article.id}) }}">Modifier l'article</a></li>
+            <li><a href="{{ path('blog_delete_article', {'id': article.id}) }}">Supprimer l'article</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

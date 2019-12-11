@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    See all author
+{% endblock %}
+
+{% block body %}
+    {% for author in authors %}
+        <li>{{ author.id }}</li>
+        <li>{{ author.firstname }} {{ author.lastname }}</li>
+        <li><a href="{{ path('blog_update_author', {'id': author.id}) }}">Modifier l'auteur</a></li>
+        <li><a href="{{ path('blog_delete_author', {'id': author.id}) }}">Supprimer l'auteur</a></li>
+    {% endfor %}
+{% endblock %}
