@@ -67,10 +67,10 @@ class AuthorController extends AbstractController
      * @Route("blog/author/update/{id}", name="blog_update_author")
      * @param Request $request
      * @param AuthorCRUD $authorCRUD
-     * @param $id
+     * @param int $id
      * @return Response
      */
-    function updateAuthor(Request $request, AuthorCRUD $authorCRUD, $id)
+    function updateAuthor(Request $request, AuthorCRUD $authorCRUD, int $id)
     {
         $author = $authorCRUD->getOneById($id);
         $form = $this->createForm(
@@ -91,10 +91,10 @@ class AuthorController extends AbstractController
     /**
      * @Route("blog/author/delete/{id}", name="blog_delete_author")
      * @param AuthorCRUD $authorCRUD
-     * @param $id
+     * @param int $id
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    function deleteAuthor(AuthorCRUD $authorCRUD, $id)
+    function deleteAuthor(AuthorCRUD $authorCRUD, int $id)
     {
         $author = $authorCRUD->getOneById($id);
         $authorCRUD->delete($author);
